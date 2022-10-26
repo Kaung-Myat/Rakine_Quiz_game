@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quize Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <audio id="clickAudio" >
+        <source src="./music/rclick-13693.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="stopAudio">
+        <source src="./music/stop-13692.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Start Button     -->
+    <div class="start-btn">
+        <button class="btn" id="btn-start" data-bs-toggle="modal" data-bs-target="#infoBox">Start</button>
+    </div>
+
+    <!-- Info Box -->
+    <div class="modal fade" id="infoBox" style="border-radius: 5px;" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: rgb(255, 218, 95);">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Some Rules of this Game</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body w-100" style="background-color: rgb(255, 218, 95)">
+              <ol>
+                <li>You will have only <span style="color: #3f2a00; font-weight: bold;">15 seconds</span> per each question.</li>
+                <li>Once you select your answer,you can't reselect.</li>
+                <li>You can't select any option once time goes off.</li>
+                <li>You can't exit from the Quize while you're playing.</li>
+                <li>You'll get points of your correct answers.</li>
+              </ol>
+            </div>
+            <div class="modal-footer" style="background-color: rgb(255, 218, 95);">
+              <button type="button" class="btn btn-secondary" id="exitBtn" data-bs-dismiss="modal">Exit Quize</button>
+              <button type="button" class="btn" id="continueBtn" style="background-color: darkgoldenrod; color: #fff;">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!-- Quize Box -->
+    <div class="quiz-box">
+        <header>
+            <div class="title">Quiz App</div>
+            <div class="timer">
+                <div class="time_text">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- <span>Which is the first Arakanese Kingdom in Rakhine?</span> -->
+            </div>
+            <div class="option_list">
+                <!-- <div class="option">
+                    <span>Dhanyawadi</span>
+                     <div class="icon tick"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="option">
+                  <span>Waithali</span>
+                   <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="option">
+                  <span>Lemro</span>
+                </div>
+                <div class="option">
+                  <span>Mrauk U</span>
+                </div> -->
+            </div>
+        </section>
+
+      <!-- Quiz box footer -->
+      <footer>
+          <div class="total_que">
+              <!-- <span><p>2</p>of<p>5</p>Questions</span> -->
+          </div>
+          <button class="next_btn">Next Que</button>
+      </footer>
+    </div>
+
+    <!-- Result box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the Quize!</div>
+        <div class="score_text">
+            
+        </div>
+        <div class="buttons">
+            <button class="quit">Quit Quiz</button>
+        </div>
+    </div>
+    
+    <script src="./JQUERY.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+    <script src="./question.js"></script>
+</body>
+</html>
